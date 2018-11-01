@@ -10,7 +10,7 @@ let snibley = {
 function pet() {
   snibley.pets++
   if (snibley.pets % snibley.tolerance == 0) {
-    if (snibley.moods.length > snibley.moodIndex)
+    if (snibley.moods.length - 1 > snibley.moodIndex)
       snibley.moodIndex++
   }
   draw()
@@ -23,8 +23,7 @@ function reset() {
 }
 
 function draw() {
-  let template = ''
-  template = `
+  let template = `
   <img src="${snibley.images[snibley.moodIndex]}"/>
         <h2>Name: ${snibley.name}</h2>
         <h2>Pets: ${snibley.pets}</h2>
